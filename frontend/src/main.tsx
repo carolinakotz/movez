@@ -7,6 +7,9 @@ import './globals.css';
 // Páginas institucionais
 import Home from './routes/Home';
 import Sobre from './routes/Sobre';
+import Integrantes from './routes/Integrantes';
+import IntegranteDetalhe from './routes/IntegranteDetalhe';
+import Faq from './routes/Faq';
 import Contato from './routes/Contato';
 import PaginaErro from './routes/Error';
 
@@ -27,6 +30,9 @@ const router = createBrowserRouter([
         children: [
             { index: true, element: <Home /> },
             { path: 'sobre', element: <Sobre /> },
+            { path: 'integrantes', element: <Integrantes /> },
+            { path: 'integrantes/:id', element: <IntegranteDetalhe /> },
+            { path: 'faq', element: <Faq /> },
             { path: 'contato', element: <Contato /> },
 
             { path: 'trechos', element: <Trechos /> },
