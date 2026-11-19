@@ -168,7 +168,7 @@ Quando a API devolve erro, ela responde `{ timestamp, status, error, message, pa
 | Repositório no GitHub | https://github.com/carolinakotz/movez |
 | Aplicação na Vercel | https://movez-gs.vercel.app |
 | API Java (Render) | https://api-rest-movez.onrender.com |
-| Vídeo no YouTube | PREECHER ⚠️ |
+| Vídeo no YouTube | https://youtu.be/Sku0C1yuEqc |
 
 ### Instalação
 
