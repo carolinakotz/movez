@@ -9,6 +9,8 @@ import PaginaErro from './routes/Error';
 
 // Páginas da solução (integradas à API Java)
 import Trechos from './routes/Trechos';
+import CadastrarTrecho from './routes/CadastrarTrecho';
+import EditarTrecho from './routes/EditarTrecho';
 
 const router = createBrowserRouter([
     {
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
         errorElement: <PaginaErro />,
         children: [
             { path: 'trechos', element: <Trechos /> },
+            { path: 'trechos/novo', element: <CadastrarTrecho /> },
+            { path: 'trechos/:id/editar', element: <EditarTrecho /> },
         ],
     },
 ]);
