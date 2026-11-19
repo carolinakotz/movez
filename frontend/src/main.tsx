@@ -7,12 +7,16 @@ import './globals.css';
 // Páginas institucionais
 import PaginaErro from './routes/Error';
 
+// Páginas da solução (integradas à API Java)
+import Trechos from './routes/Trechos';
+
 const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
         errorElement: <PaginaErro />,
         children: [
+            { path: 'trechos', element: <Trechos /> },
         ],
     },
 ]);
