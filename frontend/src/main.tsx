@@ -6,6 +6,7 @@ import './globals.css';
 
 // Páginas institucionais
 import Home from './routes/Home';
+import Sobre from './routes/Sobre';
 import PaginaErro from './routes/Error';
 
 // Páginas da solução (integradas à API Java)
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
         errorElement: <PaginaErro />,
         children: [
             { index: true, element: <Home /> },
+            { path: 'sobre', element: <Sobre /> },
 
             { path: 'trechos', element: <Trechos /> },
             { path: 'trechos/novo', element: <CadastrarTrecho /> },
