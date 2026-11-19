@@ -9,7 +9,8 @@ export function listarPerfis(signal?: AbortSignal): Promise<Perfil[]> {
     return obter<Perfil[]>(ENDPOINT, signal);
 }
 
-// POST /perfis/{id}/usuarios (rota aninhada: cadastra o morador já no perfil escolhido)
+// POST /perfis/{id}/usuarios (rota aninhada: cadastra o morador já no perfil escolhido).
+// O cdPerfil vai também no corpo porque a API valida o DTO (@NotNull) antes de ler o id da URL.
 export function cadastrarUsuarioNoPerfil(cdPerfil: number, usuario: DadosUsuario): Promise<Usuario> {
-    return enviar<Usuario>(`${ENDPOINT}/${cdPerfil}/usuarios`, usuario, 'POST');
+    return enviar<Usuario>(`${ENDPOINT}/${cdPerfil}/usuarios`, { ...usuario, cdPerfil }, 'POST');
 }
