@@ -21,6 +21,7 @@ import EditarTrecho from './routes/EditarTrecho';
 import AvaliarTrecho from './routes/AvaliarTrecho';
 import Avisos from './routes/Avisos';
 import NovoAviso from './routes/NovoAviso';
+import Participar from './routes/Participar';
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,7 @@ const router = createBrowserRouter([
             { path: 'trechos/:id/avaliar', element: <AvaliarTrecho /> },
             { path: 'avisos', element: <Avisos /> },
             { path: 'avisos/novo', element: <NovoAviso /> },
+            { path: 'participar', element: <Participar /> },
         ],
     },
 ]);
