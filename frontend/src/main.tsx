@@ -12,6 +12,7 @@ import Trechos from './routes/Trechos';
 import CadastrarTrecho from './routes/CadastrarTrecho';
 import EditarTrecho from './routes/EditarTrecho';
 import AvaliarTrecho from './routes/AvaliarTrecho';
+import Avisos from './routes/Avisos';
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
             { path: 'trechos/novo', element: <CadastrarTrecho /> },
             { path: 'trechos/:id/editar', element: <EditarTrecho /> },
             { path: 'trechos/:id/avaliar', element: <AvaliarTrecho /> },
+            { path: 'avisos', element: <Avisos /> },
         ],
     },
 ]);
