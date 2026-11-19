@@ -5,6 +5,7 @@ import App from './App.tsx';
 import './globals.css';
 
 // Páginas institucionais
+import Home from './routes/Home';
 import PaginaErro from './routes/Error';
 
 // Páginas da solução (integradas à API Java)
@@ -22,6 +23,8 @@ const router = createBrowserRouter([
         element: <App />,
         errorElement: <PaginaErro />,
         children: [
+            { index: true, element: <Home /> },
+
             { path: 'trechos', element: <Trechos /> },
             { path: 'trechos/novo', element: <CadastrarTrecho /> },
             { path: 'trechos/:id', element: <TrechoDetalhe /> },
