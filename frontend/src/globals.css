@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+@import "tailwindcss";
+
+/* Tokens da identidade visual MovEz (guia "Identidade Visual MovEz") */
+@theme {
+    /* Azul: texto, títulos, cabeçalho e rodapé */
+    --color-azul-900: #011637;
+    --color-azul-noite: #022256;
+    --color-azul-600: #0B3A85;
+    --color-azul-100: #DDE6F5;
+    --color-azul-50: #EEF3FB;
+
+    /* Verde: botões, rota sugerida e destaques */
+    --color-verde-texto: #007A57;
+    --color-verde-caminho: #00BC86;
+    --color-verde-200: #B3EBD6;
+    --color-verde-50: #E6F8F2;
+
+    /* Neutros */
+    --color-tinta: #0F1A2E;
+    --color-ardosia: #5B6B82;
+    --color-linha: #D9E1EA;
+    --color-neblina: #F5F8FA;
+
+    /* Estados com significado */
+    --color-interditado: #B42318;
+    --color-interditado-fundo: #FEE4E2;
+    --color-atencao: #92400E;
+    --color-atencao-fundo: #FEF3C7;
+
+    /* Escala da nota de conforto (sempre com número + palavra) */
+    --color-nota-5: #00BC86;
+    --color-nota-4: #7AD3B0;
+    --color-nota-3: #F2C14E;
+    --color-nota-2: #EE8A3C;
+    --color-nota-1: #D64533;
+
+    /* Tipografia */
+    --font-display: 'Nunito', 'Trebuchet MS', sans-serif;
+    --font-body: 'Atkinson Hyperlegible', system-ui, sans-serif;
+
+    /* Raios do guia */
+    --radius-campo: 8px;
+    --radius-botao: 12px;
+    --radius-cartao: 20px;
+}
+
+/* Fundo listrado do aviso de interdição: lido mesmo sem enxergar cores */
+@utility listras-interdicao {
+    background-color: var(--color-interditado-fundo);
+    background-image: repeating-linear-gradient(
+        -45deg,
+        rgb(180 35 24 / 0.07) 0 12px,
+        transparent 12px 24px
+    );
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 6rem; /* o cabeçalho fixo não cobre o campo focado */
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        @apply bg-neblina font-body text-tinta antialiased;
+        font-size: 1.125rem; /* 18 px: texto base do guia */
+        line-height: 1.55;
+    }
+
+    h1, h2, h3, h4 {
+        @apply font-display text-azul-noite;
+        text-wrap: balance;
+    }
+
+    /* Foco do teclado sempre visível, com contorno de 3 px */
+    :focus-visible {
+        outline: 3px solid var(--color-azul-noite);
+        outline-offset: 3px;
+    }
+
+    #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
